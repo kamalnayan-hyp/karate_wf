@@ -1,7 +1,7 @@
 .DS_Store
-*.jar
+# *.jar
 *.iml
-target/
+# target/
 home/
 .idea/
 .vscode/

@@ -18,4 +18,4 @@ To run the application on port 8080:
 docker run -it --rm -p 8080:8080 karate-todo
 ```
 
-Now you can access the application at [http://localhost:8080](http://localhost:8080).
+Now you can access the application at [http://localhost:9826](http://localhost:9826).

@@ -14,7 +14,7 @@ class LocalRunner {
     @Test
     void testServer() {
         ServerConfig config = App.serverConfig("src/main/java/app");
-        HttpServer.config(config).http(8080).build().waitSync();
+        HttpServer.config(config).http(9826).build().waitSync();
     }        
 
 }

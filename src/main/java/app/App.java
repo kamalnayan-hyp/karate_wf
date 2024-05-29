@@ -23,7 +23,7 @@ public class App {
     
     public static void main(String[] args) {
         ServerConfig config = App.serverConfig(args[0]);
-        HttpServer.config(config).local(false).http(8080).build().waitSync();        
+        HttpServer.config(config).local(false).http(9826).build().waitSync();        
     }
 
 }
