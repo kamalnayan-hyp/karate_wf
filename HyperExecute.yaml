@@ -33,7 +33,7 @@ partialReports:
 
 pre:
   # Skip execution of the tests in the pre step
-  - mvn install  -Dmaven.repo.local=m2 -o -Dmaven.test.skip=true
+  - mvn compile  -Dmaven.repo.local=m2 -o -Dmaven.test.skip=true
 
 uploadArtefacts:
   - name: ExecutionSnapshots
