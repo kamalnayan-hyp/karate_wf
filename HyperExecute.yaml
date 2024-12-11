@@ -22,9 +22,9 @@ background:
 
 report: true
 partialReports:
-  frameworkName: cucumber
-  location: target/karate-reports/
-  type: json
+  frameworkName: karate
+  location: target
+  type: html
 
 
 pre:
