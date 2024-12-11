@@ -14,10 +14,6 @@ maxRetries: 2
 
 concurrency: 1
 
-runtime:
-  language: java
-  version: 17
-
 
 #setting up server in the background
 background:
