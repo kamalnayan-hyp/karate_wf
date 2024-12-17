@@ -1,55 +1,88 @@
 ---
 version: 0.1
 
+#to set job timeout
 globalTimeout: 150
-testSuiteTimeout: 150
-testSuiteStep: 150
 
+#to set task timeout
+testSuiteTimeout: 150
+
+#to set which OS to run the job on
 runson: linux
+
 
 autosplit: true
 
-retryOnFailure: false
-maxRetries: 2
+#enable to retry if any test fails
+retryOnFailure: true
+maxRetries: 2           #no. of retries
 
-concurrency: 1
+#can be used to abort your job if the number of consecutive test failures for that job.
+failFast:
+  maxNumberOfTests: 2
 
 
-#setting up server in the background
+#nummber of parallel containers in a job
+concurrency: 3
+
+#for dynamic allocation of tests, optimize containers efficiently
+dynamicAllocation: true
+
+#setting up server in the background using background services
 background:
   - mvn test -Dtest=LocalRunner -Dmaven.repo.local=m2 -o || true
 
 
+#Generate consolidated Karate reports and send as an email
 report: true
 partialReports:
-  frameworkName: karate
   location: target
   type: html
+  frameworkName: karate
+  email:
+    to:
+      - abc@example.com
 
 
+#predirectives to run before executing test scenarios
 pre:
   # Skip execution of the tests in the pre step
-  - mvn compile  -Dmaven.repo.local=m2 -o -Dmaven.test.skip=true
+  - mvn compile -Dmaven.repo.local=m2 -o -Dmaven.test.skip=true
 
+
+#to save artefacts after job execution
+mergeArtifacts: true
 uploadArtefacts:
   - name: ExecutionSnapshots
     path:
       - target/
-mergeArtifacts: true
 
 
+
+#to discover all tests to be executed in a job
 testDiscovery:
   type: raw
-  mode: dynamic
+  mode: static
   command: grep -rl --include="*.feature" "" src/test/java/app 
+
+
+project: Karate
+differentialUpload:
+  enabled: true
+  ttlHours: 270  #int value, with possible range of values [1 hour to 360 hours]
+
+
 
 scenarioCommandStatusOnly: true
 
-#Stopping the server
+#Stopping the server in post steps
 post:
   - curl http://localhost:9826/__admin/stop
 
 
+#test run command which triggers the test project for execution
 testRunnerCommand: mvn test -Dtest=MyApiRunner -DFeaturePath="$test" -Dmaven.repo.local=m2 -o
 
+
+#to set labels in order to filter jobs, Job priority can also be set using labels (Eg: high, medium, low)
 jobLabel : [karate,wf]
