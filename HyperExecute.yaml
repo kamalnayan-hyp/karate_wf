@@ -62,7 +62,7 @@ uploadArtefacts:
 #to discover all tests to be executed in a job
 testDiscovery:
   type: raw
-  mode: static
+  mode: dynamic
   command: grep -rl --include="*.feature" "" src/test/java/app 
 
 
