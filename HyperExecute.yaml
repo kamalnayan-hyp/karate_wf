@@ -66,10 +66,10 @@ testDiscovery:
   command: grep -rl --include="*.feature" "" src/test/java/app 
 
 
-project: Karate
-differentialUpload:
-  enabled: true
-  ttlHours: 270  #int value, with possible range of values [1 hour to 360 hours]
+# project: Karate
+# differentialUpload:
+#   enabled: true
+#   ttlHours: 270  #int value, with possible range of values [1 hour to 360 hours]
 
 
 
