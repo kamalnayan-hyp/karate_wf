@@ -46,7 +46,7 @@ mergeArtifacts: true
 
 failFast:
     level: scenario
-    maxNumberOfTests: 2
+    maxNumberOfTests: 1
 testDiscovery:
   type: raw
   mode: dynamic
