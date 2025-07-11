@@ -24,14 +24,14 @@ background:
   - mvn test `-Dtest=LocalRunner `-Dmaven.repo.local=m2 `-o || true
 
 
-report: true
-partialReports:
-  frameworkName: karate
-  location: target/karate-reports/
-  type: json
-  email:
-    to:
-      - kamalnayan@lambdatest.com
+# report: true
+# partialReports:
+#   frameworkName: karate
+#   location: target/karate-reports/
+#   type: json
+#   email:
+#     to:
+#       - kamalnayan@lambdatest.com
 
 
 pre:
