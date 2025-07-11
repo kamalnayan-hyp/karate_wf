@@ -29,6 +29,9 @@ partialReports:
   frameworkName: karate
   location: target/karate-reports/
   type: json
+  email:
+    to:
+      - kamalnayan@lambdatest.com
 
 
 pre:
