@@ -23,7 +23,7 @@ failFast:
 
 
 #nummber of parallel containers in a job
-concurrency: 3
+concurrency: 1
 
 #for dynamic allocation of tests, optimize containers efficiently
 # dynamicAllocation: true
@@ -41,7 +41,7 @@ partialReports:
   frameworkName: karate
   email:
     to:
-      - abc@example.com
+      - kamalnayan@lambdatest.com
 
 
 #predirectives to run before executing test scenarios
