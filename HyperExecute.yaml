@@ -9,7 +9,7 @@ runson: win
 
 autosplit: true
 
-retryOnFailure: true
+retryOnFailure: false
 maxRetries: 2
 
 concurrency: 3
@@ -46,7 +46,7 @@ mergeArtifacts: true
 
 failFast:
     level: scenario
-    maxNumberOfTests: 2
+    maxNumberOfTests: 1
 testDiscovery:
   type: raw
   mode: dynamic
