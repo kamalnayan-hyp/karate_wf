@@ -12,7 +12,7 @@ autosplit: true
 retryOnFailure: false
 maxRetries: 2
 
-concurrency: 1
+concurrency: 3
 
 runtime:
   language: java
