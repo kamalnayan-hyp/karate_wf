@@ -6,7 +6,7 @@ class JunitRunner {
 
     @Karate.Test
     Karate testDemo() {
-        return Karate.run("match.feature").relativeTo(getClass());
+        return Karate.run("match.featureads").relativeTo(getClass());
     }
 
 }
