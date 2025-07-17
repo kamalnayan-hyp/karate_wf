@@ -36,7 +36,7 @@ partialReports:
 
 pre:
   # Skip execution of the tests in the pre step
-  # - mvn install -Dmaven.repo.local=m2 -Dmaven.test.skip=true
+  - mvn install -Dmaven.repo.local=m2 -Dmaven.test.skip=true
 
 uploadArtefacts:
   - name: ExecutionSnapshots
@@ -44,9 +44,9 @@ uploadArtefacts:
       - target/
 mergeArtifacts: true
 
-# failFast:
-#     level: scenario
-#     maxNumberOfTests: 1
+failFast:
+    level: scenario
+    maxNumberOfTests: 1
 testDiscovery:
   type: raw
   mode: dynamic
