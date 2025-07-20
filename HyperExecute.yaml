@@ -44,9 +44,9 @@ uploadArtefacts:
       - target/
 mergeArtifacts: true
 
-failFast:
-    level: scenario
-    maxNumberOfTests: 1
+# failFast:
+#     level: scenario
+#     maxNumberOfTests: 1
 testDiscovery:
   type: raw
   mode: dynamic
