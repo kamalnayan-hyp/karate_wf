@@ -53,7 +53,7 @@ testDiscovery:
   shell: bash
   command: grep -rl --include="*.feature" "" src/test/java/app 
 
-# scenarioCommandStatusOnly: true
+scenarioCommandStatusOnly: true
 
 #Stopping the server
 post:
