@@ -5,7 +5,7 @@ globalTimeout: 150
 testSuiteTimeout: 150
 testSuiteStep: 150
 
-runson: win
+runson: linux
 
 autosplit: true
 
@@ -44,9 +44,9 @@ uploadArtefacts:
       - target/
 mergeArtifacts: true
 
-failFast:
-    level: scenario
-    maxNumberOfTests: 1
+# failFast:
+#     level: scenario
+#     maxNumberOfTests: 1
 testDiscovery:
   type: raw
   mode: dynamic
@@ -60,6 +60,6 @@ post:
   - curl http://localhost:9826/__admin/stop
 
 
-testRunnerCommand: mvn test `-Dtest=MyApiRunner `-DFeaturePath="$test" `-Dmaven.repo.local=m2 
+testRunnerCommand: mvn test -Dtest=MyApiRunner -DFeaturePath="$test" -Dmaven.repo.local=m2 
 
 jobLabel : [karate,wf]
